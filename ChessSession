@@ -1,0 +1,18 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="10">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="752" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Pawn.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="624" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Piece.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="624" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Queen.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="624" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Rook.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="624" startPos="177" endPos="177" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Bishop.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="752" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Board.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="752" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Chess.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="752" startPos="147" endPos="147" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\ChessBoard.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="752" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\King.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="752" startPos="0" endPos="0" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Knight.java" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="752" startPos="306" endPos="306" selMode="0" lang="Java" encoding="-1" filename="C:\Users\KOzdowy\Chess\Location.java" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

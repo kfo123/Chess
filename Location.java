@@ -2,37 +2,37 @@ import java.util.*;
 import java.io.*;
 public class Location
 {
-	private int xCoor;
-	private int yCoor;
+	private int row;
+	private int col;
 	
-	public Location(int x, int y){
-		setX(x);
-		setY(y);
+	public Location(int r, int c){
+		setRow(r);
+		setCol(c);
 	}
 	
-	public boolean setX(int x){
-		if(checkValid(x)){
-			xCoor = x;
+	public boolean setRow(int r){
+		if(checkValid(r)){
+			row = r;
 			return true;}
 		else{
-			xCoor = 0;
+			row = 0;
 			return false;}
 	}
 	
-	public boolean setY(int y){
-		if(checkValid(y)){
-			yCoor = y;
+	public boolean setCol(int c){
+		if(checkValid(c)){
+			row = c;
 			return true;}
 		else{
-			yCoor = 0;
+			row = 0;
 			return false;}
 	}
 	
-	public int getX(){
-		return xCoor;}
+	public int getRow(){
+		return row;}
 	
-	public int getY(){
-		return yCoor;}
+	public int getCol(){
+		return col;}
 	
 	public boolean checkValid(int loc){
 		if (loc < 0 || loc > 7){
@@ -42,5 +42,5 @@ public class Location
 	}
 	
 	public String toString(){
-		return xCoor + "," + yCoor;}
+		return "r:" + row + ", c:" + col;}
 }

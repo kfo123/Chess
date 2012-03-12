@@ -1,21 +1,22 @@
+import java.util.*;
 public abstract class Piece
 {
 	protected char side;
 	protected Location loc;
 	
-	public Piece(char s, int x, int y){
+	public Piece(char s, int r, int c){
 		setSide(s);
-		setLocation(x, y);
+		setLocation(r, c);
 	}
 	
 	public void setSide(char s){
 		side = s;}
 	
-	public void setLocation(int x, int y){
-		loc = new Location(x, y);}
+	public void setLocation(int r, int c){
+		loc = new Location(r, c);}
 		
 	public Location getLocation(){
 		return loc;}
 
-	public abstract void move();
+	public abstract ArrayList<Location> getMoves();
 }
