@@ -25,6 +25,8 @@ public class Chess
 			System.out.println("Black's turn");}
 		System.out.println("Piece to move (row,col)?");
 		int r = input.nextInt();
+		if (r == -1){
+			break;}
 		int c = input.nextInt();
 		do{
 			while (!board.hasPiece(new Location(r, c))){
