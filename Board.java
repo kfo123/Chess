@@ -11,6 +11,9 @@ public abstract class Board
 	public Piece getPiece(Location loc){
 		return grid[loc.getRow()][loc.getCol()];}
 	
+	public void place(Piece p, Location loc){
+		grid[loc.getRow()][loc.getCol()] = p;}
+	
 	public void display(){
 		System.out.println("\t0\t1\t2\t3\t4\t5\t6\t7");
 		for (int x = 0; x < 8; x++){

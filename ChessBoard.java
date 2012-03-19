@@ -1,6 +1,10 @@
 public class ChessBoard extends Board
 {
+	private ArrayList<Piece> lostWhite;
+	private ArrayList<Piece> lostBlack;
 	public ChessBoard(){
+		lostWhite = new ArrayList<Piece>();
+		lostBlack = new ArrayList<Piece>();
 		super();
 	}
 	
@@ -35,7 +39,7 @@ public class ChessBoard extends Board
 			grid[6][x] = new Pawn('w', 0, x);}
 	}
 	
-	public void displayMoves(ArrayList<Location> moves){
+	public void displayMoves(Piece piece){
 		System.out.println("\t0\t1\t2\t3\t4\t5\t6\t7");
 		for (int x = 0; x < 8; x++){
 			System.out.print(x + "\t");
@@ -47,5 +51,27 @@ public class ChessBoard extends Board
 				}
 			System.out.println();
 		}
+	}
+	
+	public void movePiece(Location loc1, Location loc2, char side){
+		if (side == 'w' && getPiece(loc2) != null){
+			lostWhite.add(remove(loc2));}
+		if (side == 'b' && getPiece(loc2) != null){
+			lostBlack.add(remove(loc2));}
+		place(remove(loc1), loc2);
+	}
+	
+	public String checkBoard(){
+		if (checkCheck()){
+			if (checkMate()){
+				return "checkmate";}
+			return "check";}
+		return null;
+	}
+	
+	public boolean checkCheck(){
+	}
+	
+	public boolean checkMate(){
 	}
 }

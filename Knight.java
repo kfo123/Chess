@@ -8,7 +8,7 @@ public class Knight extends Piece
 		return side + "K";
 	}
 	
-	public ArrayList<Location> getMoves(){
+	public ArrayList<Location> getMove(){
 		ArrayList<Location> moves = new ArrayList<Location>();
 		moves.add(new Location(loc.getRow() + 1, loc.getCol() + 2));
 		moves.add(new Location(loc.getRow() + 1, loc.getCol() - 2));

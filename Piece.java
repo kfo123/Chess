@@ -3,6 +3,7 @@ public abstract class Piece
 {
 	protected char side;
 	protected Location loc;
+	private Board board; 
 	
 	public Piece(char s, int r, int c){
 		setSide(s);
@@ -17,6 +18,12 @@ public abstract class Piece
 		
 	public Location getLocation(){
 		return loc;}
+
+	public void setBoard(Board b){
+		board = b;}
+	
+	public Board getBoard(){
+		return board;}
 
 	public abstract ArrayList<Location> getMoves();
 }
