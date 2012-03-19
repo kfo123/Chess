@@ -11,16 +11,14 @@ public class Chess
 		input = new Scanner(System.in);
 		side = 'w';
 		while(!board.checkMate()){
-			playTurn(side);
-			System.out.println("ajlkdsjfla");
+			playTurn();
 			switchSide();
-			System.out.println(side);
-			//not switching sides!!!!!!
 		}
 	}
 	
-	public static void playTurn(char side){
+	public static void playTurn(){
 		board.display();
+		board.printLost();
 		if (side == 'w'){
 			System.out.println("White's turn");}
 		if (side == 'b'){
@@ -61,8 +59,7 @@ public class Chess
 	public static void switchSide(){
 		if (side == 'w'){
 			side = 'b';}
-		if (side == 'b'){
+		else if (side == 'b'){
 			side = 'w';}
-		System.out.println("ajsdkfl;sa");
 	}
 }
