@@ -15,7 +15,7 @@ public class Location
 			row = r;
 			return true;}
 		else{
-			row = 0;
+			row = -1;
 			return false;}
 	}
 	
@@ -24,7 +24,7 @@ public class Location
 			col = c;
 			return true;}
 		else{
-			col = 0;
+			col = -1;
 			return false;}
 	}
 	
