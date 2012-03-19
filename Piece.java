@@ -18,6 +18,9 @@ public abstract class Piece
 		
 	public Location getLocation(){
 		return loc;}
+		
+	public char getSide(){
+		return side;}
 
 	public void setBoard(Board b){
 		board = b;}

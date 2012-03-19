@@ -5,10 +5,10 @@ public class Knight extends Piece
 		super(s, r, c);}
 	
 	public String toString(){
-		return side + "K";
+		return side + "Kn";
 	}
 	
-	public ArrayList<Location> getMove(){
+	public ArrayList<Location> getMoves(){
 		ArrayList<Location> moves = new ArrayList<Location>();
 		moves.add(new Location(loc.getRow() + 1, loc.getCol() + 2));
 		moves.add(new Location(loc.getRow() + 1, loc.getCol() - 2));

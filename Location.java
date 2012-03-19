@@ -21,10 +21,10 @@ public class Location
 	
 	public boolean setCol(int c){
 		if(checkValid(c)){
-			row = c;
+			col = c;
 			return true;}
 		else{
-			row = 0;
+			col = 0;
 			return false;}
 	}
 	

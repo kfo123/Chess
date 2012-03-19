@@ -14,13 +14,13 @@ public class Pawn extends Piece
 		ArrayList<Location> moves = new ArrayList<Location>();
 		if (side == 'w'){
 			if (firstMove){
-				moves.add(new Location(loc.getRow(), loc.getCol() - 2));}
-			moves.add(new Location(loc.getRow(), loc.getCol() - 1));
+				moves.add(new Location(loc.getRow() - 2, loc.getCol()));}
+			moves.add(new Location(loc.getRow() - 1, loc.getCol()));
 		}
 		if (side == 'b'){
 			if (firstMove){
-				moves.add(new Location(loc.getRow(), loc.getCol() + 2));}
-			moves.add(new Location(loc.getRow(), loc.getCol() + 1));
+				moves.add(new Location(loc.getRow() + 2, loc.getCol()));}
+			moves.add(new Location(loc.getRow() + 1, loc.getCol()));
 		}
 		return moves;
 	}

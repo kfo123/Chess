@@ -1,3 +1,4 @@
+import java.util.*;
 public abstract class Board
 {
 	protected Piece grid[][];
@@ -12,7 +13,15 @@ public abstract class Board
 		return grid[loc.getRow()][loc.getCol()];}
 	
 	public void place(Piece p, Location loc){
-		grid[loc.getRow()][loc.getCol()] = p;}
+		p.setBoard(this);
+		grid[loc.getRow()][loc.getCol()] = p;
+	}
+		
+	public Piece remove(Location loc){
+		Piece obj = grid[loc.getRow()][loc.getCol()];
+		grid[loc.getRow()][loc.getCol()] = null;
+		return obj;
+	}
 	
 	public void display(){
 		System.out.println("\t0\t1\t2\t3\t4\t5\t6\t7");
@@ -26,6 +35,12 @@ public abstract class Board
 				}
 			System.out.println();
 		}
+	}
+	
+	public boolean hasPiece(Location loc){
+		if (getPiece(loc) == null){
+			return false;}
+		return true;
 	}
 	
 	public boolean validLoc(Location loc){
