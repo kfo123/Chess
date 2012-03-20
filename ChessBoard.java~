@@ -69,8 +69,8 @@ public class ChessBoard extends Board
 	}
 	
 	public void movePiece(Location loc1, Location loc2, char side){
-		if (getPiece(loc1) instanceof Pawn){
-			getPiece(loc1).hasMoved();}
+		if (get(loc1) instanceof Pawn){
+			get(loc1).hasMoved();}
 		if (side == 'w' && getPiece(loc2) != null){
 			lostBlack.add(remove(loc2));}
 		if (side == 'b' && getPiece(loc2) != null){

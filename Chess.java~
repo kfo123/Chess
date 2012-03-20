@@ -45,7 +45,7 @@ public class Chess
 		board.displayMoves(curr);
 		System.out.println("Where to move?");
 		r = input.nextInt();
-		c = input.nextInt();//add way to get out in case wrong piece
+		c = input.nextInt();
 		if (board.getPiece(new Location(r, c)) != null){
 			while (board.getPiece(new Location(r, c)).getSide() == side){
 				System.out.println("Pick a valid location");

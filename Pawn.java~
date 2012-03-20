@@ -1,13 +1,18 @@
 import java.util.*;
 public class Pawn extends Piece
 {
+	private boolean firstMove;
 	public Pawn(char s, int r, int c){
-		super(s, r, c);}
+		super(s, r, c);
+		firstMove = true;}
 		
 	public String toString(){
 		return side + "P";
 	}
 
+	public void hasMoved(){
+		firstMove = false;}
+	
 	public ArrayList<Location> getMoves(){
 		ArrayList<Location> moves = new ArrayList<Location>();
 		if (side == 'w'){

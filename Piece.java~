@@ -4,7 +4,7 @@ public abstract class Piece
 	protected char side;
 	protected Location loc;
 	private Board board; 
-	protected boolean firstMove;
+	private boolean firstMove;
 	
 	public Piece(char s, int r, int c){
 		setSide(s);
