@@ -87,11 +87,34 @@ public class ChessBoard extends Board
 	}
 	
 	public boolean checkCheck(){
+		//getKing()
+		//getOpponentPieces()
+		//for piece in opponentpieces
+		//	getMoves()
+		//	for locations in moves
+		//		if location = king.location
+		//		return true
 		return false;
 	}
 	
 	public boolean checkMate(){
+		//getKing()
+		//getmovableneighbours(king)
+		//for locations in neighbours
+		//	if !mateHelper(loc)
+		//		return false;
+		//return true;
 		return false;
+	}
+
+	public boolean mateHelper(Location loc){
+		//getOpponentPices()
+		//for piece in opponenetpieces
+		//	getmoves()
+		//	for locations in moves
+		//		if location = loc
+		//		return true
+		//return false
 	}
 	
 	public void printLost(){
