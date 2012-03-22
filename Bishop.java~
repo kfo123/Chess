@@ -15,7 +15,6 @@ public class Bishop extends Piece
 			moves.add(new Location(loc.getRow() + x, loc.getCol() - x));
 			moves.add(new Location(loc.getRow() - x, loc.getCol() + x));
 			moves.add(new Location(loc.getRow() - x, loc.getCol() - x));}
-			//if something blocks one of these paths, it doesn't continue
 		return moves;
 	}
 }

@@ -10,14 +10,14 @@ public class Queen extends Piece
 	
 	public ArrayList<Location> getMoves(){
 		ArrayList<Location> moves = new ArrayList<Location>();
-		char n = isValidMove(side);
-		char ne = isValidMove(side);
-		char e = isValidMove(side);
-		char se = isValidMove(side);
-		char s = isValidMove(side);
-		char sw = isValidMove(side);
-		char w = isValidMove(side);
-		char nw = isValidMove(side);
+		char n = true;
+		char ne = true;
+		char e = true;
+		char se = true;
+		char s = true;
+		char sw = true;
+		char w = true;
+		char nw = true;
 		for (int x = 1; x < 8; x++){
 			if (e){
 				moves.add(new Location(loc.getRow(), loc.getCol() + x));}

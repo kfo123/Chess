@@ -18,7 +18,6 @@ public class King extends Piece
 		moves.add(new Location(loc.getRow() + 1, loc.getCol() - 1));
 		moves.add(new Location(loc.getRow() - 1, loc.getCol() + 1));
 		moves.add(new Location(loc.getRow() - 1, loc.getCol() - 1));
-		//trim moves so that impossible ones are gone
 		return moves;
 	}
 }

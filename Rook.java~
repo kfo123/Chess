@@ -15,7 +15,6 @@ public class Rook extends Piece
 			moves.add(new Location(loc.getRow(), loc.getCol() - x));
 			moves.add(new Location(loc.getRow() + x, loc.getCol()));
 			moves.add(new Location(loc.getRow() - x, loc.getCol()));
-			//if something blocks path, make so path doesn't continue
 		}
 		return moves;
 	}

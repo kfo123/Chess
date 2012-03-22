@@ -49,14 +49,14 @@ public abstract class Board
 	}
 	
 	public boolean inGrid(Location loc){
-		if (loc.getRow() >= 0 || loc.getRow() <= 7 || loc.getCol() >= 0 || loc.getCol() <= 7){
+		if (loc.getRow() >= 0 && loc.getRow() <= 7 && loc.getCol() >= 0 && loc.getCol() <= 7){
 			return true;}
 		else{
 			return false;}
 	}
 
 	public boolean validLoc(Location loc){
-		if (loc.getRow() >= 0 || loc.getRow() <= 7 || loc.getCol() >= 0 || loc.getCol() <= 7){
+		if (loc.getRow() >= 0 && loc.getRow() <= 7 && loc.getCol() >= 0 && loc.getCol() <= 7){
 			if (grid[loc.getRow()][loc.getCol()] != null){
 				return true;}
 			else{
@@ -65,4 +65,8 @@ public abstract class Board
 		else{
 			return false;}
 	}
+
+	
+	
+	
 }

@@ -77,45 +77,84 @@ public class ChessBoard extends Board
 			lostWhite.add(remove(loc2));}
 		place(remove(loc1), loc2);
 	}
+
+	public char isValidMove(Location loc, char side){
+		if (getPiece(loc) == null){
+			return 'n';}
+		else if (getPiece(loc).getSide() == side){
+			return 'p';}
+		else{
+			return 'o';}
+	}
 	
-	public String checkBoard(){
-		if (checkCheck()){
-			if (checkMate()){
-				return "checkmate";}
-			return "check";}
+	public String checkBoard(char side){
+		if (checkCheck(side)){
+			if (checkMate(side)){
+				return "checkmate by " + side;}
+			return "check by " + side;}
+		return "";
+	}
+
+	public ArrayList<Piece> getPieces(char side){
+		ArrayList<Piece> pieces = new ArrayList<Piece>();
+		for (int x = 0; x < 8; x++){
+			for (int y = 0; y < 8; y++){
+				if (grid[x][y] != null && grid[x][y].getSide() == side){
+					pieces.add(grid[x][y]);}
+			}
+		}
+		return pieces;
+	}
+
+	public Piece getKing(char side){
+		for (int x = 0; x < 8; x++){
+			for (int y = 0; y < 8; y++){
+				if (grid[x][y] instanceof King && grid[x][y].getSide() == side){
+					return grid[x][y];}
+			}
+		}
 		return null;
 	}
 	
-	public boolean checkCheck(){
-		//getKing()
-		//getOpponentPieces()
-		//for piece in opponentpieces
-		//	getMoves()
-		//	for locations in moves
-		//		if location = king.location
-		//		return true
-		return false;
-	}
-	
-	public boolean checkMate(){
-		//getKing()
-		//getmovableneighbours(king)
-		//for locations in neighbours
-		//	if !mateHelper(loc)
-		//		return false;
-		//return true;
+	public boolean checkCheck(char side){
+		Piece king;
+		if (side == 'w'){
+			king = getKing('b');}
+		else{
+			king = getKing('w');}
+		ArrayList<Piece> pieces = getPieces(side);
+		for (Piece p : pieces){
+			ArrayList<Location> moves = p.getMoves();
+			for (Location loc : moves){
+				if (loc == king.getLocation()){
+					return true;}
+			}
+		}
 		return false;
 	}
 
-	public boolean mateHelper(Location loc){
-		//getOpponentPices()
-		//for piece in opponenetpieces
-		//	getmoves()
-		//	for locations in moves
-		//		if location = loc
-		//		return true
-		//return false
+	public boolean checkMate(char side){
+		Piece king = getKing(side);
+		ArrayList<Location> movableLocations = king.getMoves();
+		movableLocations.add(king.getLocation());
+		for (Location loc : movableLocations){
+			if (!mateHelper(loc, side)){
+				return false;}
+		}
+		return true;
 	}
+
+	public boolean mateHelper(Location loc, char side){
+		ArrayList<Piece> pieces = getPieces(side);
+		for (Piece p : pieces){
+			ArrayList<Location> locations = p.getMoves();
+			for (Location l : locations){
+			       if (l == loc){
+			       		return true;}
+			}
+	 	}
+		return false;
+	}		
 	
 	public void printLost(){
 		String wstr = "White: ";

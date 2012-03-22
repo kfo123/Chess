@@ -3,8 +3,8 @@ public abstract class Piece
 {
 	protected char side;
 	protected Location loc;
-	private Board board; 
-	private boolean firstMove;
+	private ChessBoard board; 
+	protected boolean firstMove;
 	
 	public Piece(char s, int r, int c){
 		setSide(s);
@@ -27,7 +27,7 @@ public abstract class Piece
 	public char getSide(){
 		return side;}
 
-	public void setBoard(Board b){
+	public void setBoard(ChessBoard b){
 		board = b;}
 	
 	public Board getBoard(){

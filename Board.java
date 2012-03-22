@@ -65,4 +65,14 @@ public abstract class Board
 		else{
 			return false;}
 	}
+
+	public char isValidMove(Location loc, char side){
+		if (getPiece(loc) == null){
+			return 'n';}
+		else if (getPiece(loc).getSide() == side){
+			return 'p';}
+		else{
+			return 'o';}
+	}	
+	
 }

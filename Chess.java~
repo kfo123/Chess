@@ -10,10 +10,11 @@ public class Chess
 		board = new ChessBoard();
 		input = new Scanner(System.in);
 		side = 'w';
-		while(!board.checkMate()){
+		do{
 			playTurn();
 			switchSide();
-		}
+		}while(!board.checkMate(side))
+		
 	}
 	
 	public static void playTurn(){
@@ -45,7 +46,7 @@ public class Chess
 		board.displayMoves(curr);
 		System.out.println("Where to move?");
 		r = input.nextInt();
-		c = input.nextInt();
+		c = input.nextInt();//add way to get out in case wrong piecj
 		if (board.getPiece(new Location(r, c)) != null){
 			while (board.getPiece(new Location(r, c)).getSide() == side){
 				System.out.println("Pick a valid location");
@@ -55,7 +56,7 @@ public class Chess
 		}
 		Location loc2 = new Location(r, c);
 		board.movePiece(loc1, loc2, side);
-		board.checkBoard();
+		board.checkBoard(side);
 	}
 	
 	public static void switchSide(){

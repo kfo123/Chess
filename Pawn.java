@@ -32,6 +32,7 @@ public class Pawn extends Piece
 				moves.add(new Location(loc.getRow() + 1, loc.getCol() + 1));
 			}
 		}
+		//make it so that if it can't make the move directly ahead, trying to go two ahead won't work either
 		return moves;
 	}
 }
