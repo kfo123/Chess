@@ -66,7 +66,7 @@ public abstract class Board
 			return false;}
 	}
 
-	public char isValidMove(Location loc, char side){
+	public char getType(Location loc, char side){
 		if (getPiece(loc) == null){
 			return 'n';}
 		else if (getPiece(loc).getSide() == side){

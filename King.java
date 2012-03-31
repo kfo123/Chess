@@ -18,7 +18,11 @@ public class King extends Piece
 		moves.add(new Location(loc.getRow() + 1, loc.getCol() - 1));
 		moves.add(new Location(loc.getRow() - 1, loc.getCol() + 1));
 		moves.add(new Location(loc.getRow() - 1, loc.getCol() - 1));
-		//trim moves so that impossible ones are gone
+		for (Iterator<Location> it = moves.iterator(); it.hasNext();){
+			Location move = it.next();
+			if (getBoard().getType(move, side) == 'p'){
+				it.remove();}
+		}
 		return moves;
 	}
 }

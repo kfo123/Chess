@@ -11,11 +11,41 @@ public class Bishop extends Piece
 	public ArrayList<Location> getMoves(){
 		ArrayList<Location> moves = new ArrayList<Location>();
 		for (int x = 1; x < 8; x++){
-			moves.add(new Location(loc.getRow() + x, loc.getCol() + x));
-			moves.add(new Location(loc.getRow() + x, loc.getCol() - x));
-			moves.add(new Location(loc.getRow() - x, loc.getCol() + x));
-			moves.add(new Location(loc.getRow() - x, loc.getCol() - x));}
-			//if something blocks one of these paths, it doesn't continue
+			if (getBoard().getType(new Location(loc.getRow() + x, loc.getCol() + x), side) == 'o'){
+				moves.add(new Location(loc.getRow() + x, loc.getCol() + x));
+				break;}
+			else if (getBoard().getType(new Location(loc.getRow() + x, loc.getCol() + x), side) == 'n'){
+				moves.add(new Location(loc.getRow() + x, loc.getCol() + x));}
+			else{
+				break;}
+		}
+		for (int x = 1; x < 8; x++){
+			if (getBoard().getType(new Location(loc.getRow() - x, loc.getCol() - x), side) == 'o'){
+				moves.add(new Location(loc.getRow() - x, loc.getCol() - x));
+				break;}
+			else if (getBoard().getType(new Location(loc.getRow() - x, loc.getCol() - x), side) == 'n'){
+				moves.add(new Location(loc.getRow() - x, loc.getCol() - x));}
+			else{
+				break;}
+		}
+		for (int x = 1; x < 8; x++){
+			if (getBoard().getType(new Location(loc.getRow() - x, loc.getCol() + x), side) == 'o'){
+				moves.add(new Location(loc.getRow() - x, loc.getCol() + x));
+				break;}
+			else if (getBoard().getType(new Location(loc.getRow() - x, loc.getCol() + x), side) == 'n'){
+				moves.add(new Location(loc.getRow() - x, loc.getCol() + x));}
+			else{
+				break;}
+		}
+		for (int x = 1; x < 8; x++){
+			if (getBoard().getType(new Location(loc.getRow() + x, loc.getCol() - x), side) == 'o'){
+				moves.add(new Location(loc.getRow() + x, loc.getCol() - x));
+				break;}
+			else if (getBoard().getType(new Location(loc.getRow() + x, loc.getCol() - x), side) == 'n'){
+				moves.add(new Location(loc.getRow() + x, loc.getCol() - x));}
+			else{
+				break;}
+		}
 		return moves;
 	}
 }

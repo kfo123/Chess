@@ -21,7 +21,7 @@ public class Knight extends Piece
 		//trim moves so that impossible ones are gone
 		for (Iterator<Location> it = moves.iterator(); it.hasNext();){
 			Location move = it.next();
-			if (getBoard().isValidMove(move, side) == 'p'){
+			if (getBoard().getType(move, side) == 'p'){
 				it.remove();}
 		}
 		return moves;
